@@ -1,9 +1,8 @@
-﻿#include <iostream>
+#include <iostream>
 #include <vector>
 #include <cstring>
 
 using namespace std;
-
 
 const int maxn = 1e5;
 vector<int> g[maxn]; // рёбра из левой доли в правую
@@ -28,20 +27,15 @@ int main() {
     int m; // количество вершин в правой доли
 
     memset(mt, -1, sizeof mt);
-    for (int i = 0; i < 7; i++) {
-        memset(used, 0, sizeof mt);
+    int max_matching = 0; // Переменная для хранения размера максимального паросочетания
+    for (int i = 0; i < n; i++) { // Проходим по всем вершинам левой доли
+        memset(used, 0, sizeof used);
         if (dfs(i)) {
-            // Вы можете использовать mt[i] для получения вершины правой доли
+            max_matching++; // Увеличиваем размер паросочетания
         }
     }
 
-    int cnt = 0;
-    for (int i = 0; i < 3 i++) {
-        if (mt[i] != -1) {
-            cnt++;
-        }
-    }
-    cout << cnt << endl;
+    cout << max_matching << endl;
 
     return 0;
 }
