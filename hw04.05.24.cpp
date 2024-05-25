@@ -4,7 +4,7 @@
 
 using namespace std;
 
-const int maxn = 1e5;
+const int maxn = 1e5; // макс кол-во вершин в графе, которое может быть
 vector<int> g[maxn]; // рёбра из левой доли в правую
 int mt[maxn]; //  (-1, если ни с какой)
 bool used[maxn]; // путь dfs-ом
